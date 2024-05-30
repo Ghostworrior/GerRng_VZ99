@@ -22,7 +22,7 @@ class CfgMagazines {
         scope = 1;
     };
 
-    //HE w/ multi fuze
+/*    //HE w/ multi fuze
     class GVAR(HE_multi): GVAR(HE) {
         GVAR(base) = QGVAR(HE_multi);
         displayName = "vz99 60mm HE Multi Fuze";
@@ -45,7 +45,7 @@ class CfgMagazines {
     class GVAR(HE_PRX_charge0): GVAR(HE_PRX) {
         initSpeed = 70;
         scope = 1;
-    };
+    };*/
     //Smokes
     class GVAR(smokeWhite): GVAR(HE) {
         GVAR(base) = QGVAR(smokeWhite);

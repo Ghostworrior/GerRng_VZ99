@@ -20,7 +20,7 @@ class CfgCloudlets
 		rubbing = 0.04;
   	position[] = {0,15,0};
 		moveVelocityVar[] = {0, -1, 0.1};		// variability in direction and speed of particle (each part of vector has it is own variability)
-		moveVelocity[] = {0.1, -0.5, 0};
+		moveVelocity[] = {0.1, -0.75, 0};
 	};
 	class WPTrailsVT:WPTrails{
 		position[] = {0,15,0};
