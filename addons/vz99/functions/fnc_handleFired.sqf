@@ -22,14 +22,14 @@
 #include "script_component.hpp"
 
 params ["_mortarVeh", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
-TRACE_7("",_mortarVeh,_weapon,_muzzle,_mode,_ammo,_magazine,_projectile);
+TRACE_7("",_mortarVeh, _weapon, _muzzle, _mode, _ammo, _magazine, _projectile);
 
 if (!local _mortarVeh) exitWith {};
 
 //Remove the empty magazine, so a new one will load correctly
 private _loadedEmpty = _mortarVeh magazinesTurret [0];
 if (!(_loadedEmpty isEqualTo [])) then {
-    TRACE_1("removing empty mag",_loadedEmpty);
+    TRACE_1("removing empty mag", _loadedEmpty);
     _mortarVeh removeMagazinesTurret [(_loadedEmpty select 0), [0]];
 };
 
@@ -38,6 +38,10 @@ if (_fuze == "") exitWith {};
 
 private _detonationHeight = switch (true) do {
 case (_fuze == "prx"): {3.5}; //M734 says "PRX = Proximity air burst between 3 and 13 feet"
+    default {-1};
+};
+private _detonationHeight = switch (true) do {
+case (_fuze == "prx2"): {7.5}; //M734 says "PRX = Proximity air burst between 3 and 13 feet"
     default {-1};
 };
 
@@ -58,8 +62,13 @@ case (_fuze == "prx"): {3.5}; //M734 says "PRX = Proximity air burst between 3 a
 
     TRACE_3("",_height,_detonationHeight,diag_fps);
 
-    triggerAmmo _projectile;
+    private _position = getPosATL _projectile;
+    private _subMunition = createVehicle [QGVAR(ammo_he_airburst), _position, [], 0, "FLY"];
 
+    _subMunition setPosATL _position;
+    _subMunition setVelocity [0, 0, -10];
+
+    deleteVehicle _projectile;
     [_pfID] call CBA_fnc_removePerFrameHandler;
 
 }, 0, [_projectile, _detonationHeight, (time + 5)]] call CBA_fnc_addPerFrameHandler;

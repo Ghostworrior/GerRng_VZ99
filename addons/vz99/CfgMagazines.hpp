@@ -46,7 +46,6 @@ class CfgMagazines {
         initSpeed = 70;
         scope = 1;
     };
-
     //Smokes
     class GVAR(smokeWhite): GVAR(HE) {
         GVAR(base) = QGVAR(smokeWhite);
@@ -60,16 +59,15 @@ class CfgMagazines {
         initSpeed = 70;
         scope = 1;
     };
-
-    class GVAR(smokeRed): GVAR(HE) {
-        GVAR(base) = QGVAR(smokeRed);
-        displayName = "vz99 60mm Smoke (Red)";
-        descriptionShort = "60mm HE Red Smoke Shell<br/>For use in the vz99 mortar";
-        displayNameShort = "SMOKE (Red)";
-        ammo = QGVAR(ammo_smokeRed);
+    class GVAR(smokeWhiteVT): GVAR(HE) {
+        GVAR(base) = QGVAR(smokeWhiteVT);
+        displayName = "vz99 60mm Smoke VT (White)";
+        descriptionShort = "60mm White Smoke Shell VT<br/>For use in the vz99 mortar";
+        displayNameShort = "SMOKE VT (White)";
+        ammo = QGVAR(ammo_smokeWhiteVT);
         initSpeed = 110;
     };
-    class GVAR(smokeRed_charge0): GVAR(smokeRed) {
+    class GVAR(smokeWhiteVT_charge0): GVAR(smokeWhiteVT) {
         initSpeed = 70;
         scope = 1;
     };
@@ -84,6 +82,18 @@ class CfgMagazines {
         initSpeed = 110;
     };
     class GVAR(flare_charge0): GVAR(flare) {
+        initSpeed = 70;
+        scope = 1;
+    };
+    class GVAR(flare_IR): GVAR(HE) {
+        GVAR(base) = QGVAR(flare_IR);
+        displayName = "vz99 60mm Flare (IR)";
+        descriptionShort = "60mm IR Flare Shell<br/>For use in the vz99 mortar";
+        displayNameShort = "FLARE";
+        ammo = QGVAR(ammo_flare_IR);
+        initSpeed = 110;
+    };
+    class GVAR(flare_IR_charge0): GVAR(flare_IR) {
         initSpeed = 70;
         scope = 1;
     };

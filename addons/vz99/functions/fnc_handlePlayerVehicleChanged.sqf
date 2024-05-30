@@ -32,12 +32,12 @@ _mortarVeh disableNVGEquipment ((hmd _player) == "");
     _args params ["_player", "_mortarVeh", "_levelCheck"];
 
     if ((!alive _player) || {!alive _mortarVeh} || {ACE_player != _player}) exitWith {
-        TRACE_2("exiting PFEH,null/change",_player,_mortarVeh);
+        TRACE_2("exiting PFEH, null/change",_player,_mortarVeh);
         [_pfID] call CBA_fnc_removePerFrameHandler;
     };
 
     if ((vehicle _player) != _mortarVeh) exitWith {
-        TRACE_1("exiting PFEH - clean getout",_this);
+        TRACE_1("exiting PFEH - clean getout", _this);
         [_pfID] call CBA_fnc_removePerFrameHandler;
 
         if (((_player distance _mortarVeh) < 5) &&
@@ -45,7 +45,7 @@ _mortarVeh disableNVGEquipment ((hmd _player) == "");
                 {[_player, _mortarVeh, []] call ACEFUNC(common,canInteractWith)}) then {
             private _weaponDir = _mortarVeh weaponDirection (currentWeapon _mortarVeh);
             private _azimuth = (_weaponDir select 0) atan2 (_weaponDir select 1);
-            TRACE_2("CAN pickup - set dir",_mortarVeh,_azimuth);
+            TRACE_1("CAN pickup - set dir",_mortarVeh,_azimuth);
             _player setDir _azimuth;
             [_mortarVeh, _player] call FUNC(doPickupWeapon);
         } else {

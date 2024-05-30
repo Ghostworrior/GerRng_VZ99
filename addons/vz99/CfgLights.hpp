@@ -1,0 +1,3 @@
+class CfgLights{
+  class ExploLight;
+};
