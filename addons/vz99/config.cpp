@@ -6,7 +6,7 @@ class CfgPatches {
         weapons[] = {QGVAR(carryWeapon)};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"A3_characters_F", "A3_Data_F"};
-        author = "Ghostorrior expanding on work of Potato and Dankan37";
+        author = "J. Smith expanding on work of Potato and Dankan37";
     };
 };
 class WPExplosion;

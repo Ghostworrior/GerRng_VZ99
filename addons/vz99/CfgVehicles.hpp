@@ -5,9 +5,9 @@ class CfgVehicles {
         author = "PabstMirror";
         class TransportMagazines {
             MACRO_ADDMAGAZINE(GVAR(HE),8);
-            MACRO_ADDMAGAZINE(GVAR(HE_multi),8);
+            MACRO_ADDMAGAZINE(GVAR(flare_IR),8);
             MACRO_ADDMAGAZINE(GVAR(smokeWhite),8);
-            MACRO_ADDMAGAZINE(GVAR(smokeRed),8);
+            MACRO_ADDMAGAZINE(GVAR(smokeWhiteVT),8);
             MACRO_ADDMAGAZINE(GVAR(flare),8);
         };
         class TransportItems {};

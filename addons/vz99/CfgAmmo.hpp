@@ -80,12 +80,12 @@ class CfgAmmo {
             distance = 1;
         };
     };
-    class GVAR(ammo_he_airburst): GVAR(ammo_he) {
+    /*class GVAR(ammo_he_airburst): GVAR(ammo_he) {
         simulation = "shotRocket";
         timeToLive = 0;
         vz_burstHeight = 20;
         vz_shellParam[] = {40, 7, 4, 1800, "B_408_Ball", 5, "APERSMine",0};
         // explosionEffects = "HERocketExplosion"; //ExploAmmoExplosion, HEShellExplosion
         // CraterEffects = "";
-    };
+    };*/
 };
